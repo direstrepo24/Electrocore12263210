@@ -308,6 +308,7 @@ namespace Electrocore.Controllers
                 verificateExistElement.Imei_Device=model.Imei_Device;
                 verificateExistElement.Fecha_Sincronizacion=date_sync;
                 verificateExistElement.Hora_Sincronizacion=hour_sync;
+                   verificateExistElement.Is_Enabled_Data=true;
                 await this._elementoRepository.EditAsync(verificateExistElement);
 
                 Elemento_Id=verificateExistElement.Id;
@@ -316,6 +317,7 @@ namespace Electrocore.Controllers
                 var modelElemento = _mapper.Map<RequestDataSyncViewModel, Elemento>(viewModel);
                 modelElemento.Fecha_Sincronizacion=date_sync;
                 modelElemento.Hora_Sincronizacion=hour_sync;
+                 modelElemento.Is_Enabled_Data=true;
                 await this._elementoRepository.AddAsync(modelElemento);
                 await _elementoRepository.Commit();
                 Elemento_Id=modelElemento.Id;
@@ -334,6 +336,7 @@ namespace Electrocore.Controllers
             var listCablesNew = _mapper.Map<IEnumerable<ElementoCableViewModel>, IEnumerable<ElementoCable>>(cables);
             foreach(var cableNew in listCablesNew){
                 cableNew.Elemento_Id= Elemento_Id;
+                cableNew.Is_Enabled_Data= true;
                 await this._elementoCableRepository.AddAsync(cableNew);
                 await _elementoRepository.Commit();
             }

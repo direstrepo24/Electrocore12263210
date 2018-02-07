@@ -21,6 +21,8 @@ namespace electrocore.ViewModels
         public string Imei_Device{ get; set; }
         public string Token_Elemento{ get; set; }
 
+         public bool Is_Enabled_Data {get; set;}
+
         //Relaciones
         [Required]
         public long Usuario_Id{ get; set; }

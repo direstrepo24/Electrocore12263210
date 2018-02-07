@@ -28,6 +28,8 @@ namespace electrocore.ViewModels
         public string Imei_Device{ get; set; }
         public string Token_Elemento{ get; set; }
 
+         public bool Is_Enabled_Data {get; set;}
+
         //Relacion de 1
         public  Proyecto Proyecto{ get; set; }
         public  Material Material{ get; set; }

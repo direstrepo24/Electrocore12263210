@@ -32,7 +32,7 @@ namespace electrocore.Controllers
         IHostingEnvironment  _hostingEnvironment;
        // private AmazonS3Client _s3Client = new AmazonS3Client(RegionEndpoint.EUWest2);
        //private AmazonS3Client _s3Client;
-        private static string _bucketName = "datatakefiles";//this is my Amazon Bucket name
+       // private static string _bucketName = "datatakefiles";//this is my Amazon Bucket name
 
 
 

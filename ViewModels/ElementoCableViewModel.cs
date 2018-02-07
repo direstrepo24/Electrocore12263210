@@ -15,5 +15,7 @@ namespace electrocore.ViewModels
         
         public long DetalleTipocable_Id{ get; set; }
         public long Elemento_Id{ get; set; }
+
+         public bool Is_Enabled_Data {get; set;}
     }
 }

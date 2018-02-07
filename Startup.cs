@@ -39,7 +39,7 @@ namespace Electrocore
     public partial class Startup
     {
       
-       RsaSecurityKey  key;
+      // RsaSecurityKey  key;
         public TokenOptions _tokenAuth;
         public Startup(IConfiguration configuration)
         {
