@@ -66,20 +66,20 @@ namespace Electrocore
 
 
                
-
-
+                    //CONFIG S3
+                /* 
                 Environment.SetEnvironmentVariable("AWS_ACCESS_KEY_ID", Configuration["AWS:AccessKey"]);
                 Environment.SetEnvironmentVariable("AWS_SECRET_ACCESS_KEY", Configuration["AWS:SecretKey"]);
                 Environment.SetEnvironmentVariable("AWS_REGION", Configuration["AWS:Region"]);
-
+                */
 
                // Environment.SetEnvironmentVariable("AWS_ACCESS_KEY_ID", "AKIAIBP6JF2ZA2KOKPZA");
                 //Environment.SetEnvironmentVariable("AWS_SECRET_ACCESS_KEY", "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");
                 //Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
+//CONFIG S3
+               // services.AddDefaultAWSOptions(Configuration.GetAWSOptions());
 
-                services.AddDefaultAWSOptions(Configuration.GetAWSOptions());
-
-                services.AddAWSService<IAmazonS3>();
+                //services.AddAWSService<IAmazonS3>();
 
 
 
@@ -241,9 +241,10 @@ namespace Electrocore
 
         
             
-               services.AddMvc();  
-               services.AddDefaultAWSOptions(Configuration.GetAWSOptions());
-                services.AddAWSService<IAmazonS3>();  
+               services.AddMvc(); 
+               //CONFIG S3 
+               //services.AddDefaultAWSOptions(Configuration.GetAWSOptions());
+               // services.AddAWSService<IAmazonS3>();  
               /* services.AddDotVVM(options =>
                 {
                     options.AddDefaultTempStorages("Temp");

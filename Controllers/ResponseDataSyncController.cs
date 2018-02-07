@@ -31,8 +31,8 @@ namespace Electrocore.Controllers
         #region Atributes
 
 
-        private  IAmazonS3 S3Client { get; set; }
-        private static string _bucketName = "datatakefiles";//this is my Amazon Bucket name
+       // private  IAmazonS3 S3Client { get; set; }
+      //  private static string _bucketName = "datatakefiles";//this is my Amazon Bucket name
       
       
          private readonly ITipoCableRepository _ITipoCableRepository;
@@ -91,7 +91,7 @@ namespace Electrocore.Controllers
          ITipo_PerdidaRepository tipo_PerdidaRepository,
          ICiudad_EmpresaRepository ciudad_EmpresaRepository,
         IDispositivoRepository dispositivoRepository,
-        IAmazonS3 s3Client,
+        //IAmazonS3 s3Client,
          IMapper mapper,
          IHostingEnvironment hostingEnvironment)
         {
@@ -125,7 +125,7 @@ namespace Electrocore.Controllers
             _hostingEnvironment=hostingEnvironment; //service images
 
             //S3
-             this.S3Client = s3Client;
+            // this.S3Client = s3Client;
         }
 
         #endregion
@@ -381,16 +381,16 @@ namespace Electrocore.Controllers
                 {
                     this._fotoRepository.Delete(fotoitemOld);
                     var rutaFoto= fotoitemOld.Ruta;
-                    if(!fotoitemOld.Ruta.ToUpper().Contains("Foto Nula".ToUpper())){
+                    /*if(!fotoitemOld.Ruta.ToUpper().Contains("Foto Nula".ToUpper())){
                         string replaceFoto =fotoitemOld.Ruta.Replace("/Fotos/", "Fotos/");
                         await DeletingAnObject(_bucketName,replaceFoto);
 
 
-                    }
+                    }*/
                     //Local
-                    /*string foto= _hostingEnvironment.WebRootPath+fotoitemOld.Ruta;
+                    string foto= _hostingEnvironment.WebRootPath+fotoitemOld.Ruta;
                     if (System.IO.File.Exists(foto))
-                        System.IO.File.Delete(foto);*/
+                        System.IO.File.Delete(foto);
                        // if (System.IO.File.Exists(@"C:\test.txt"))
                        // System.IO.File.Delete(@"C:\test.txt"));
                 }
@@ -413,18 +413,18 @@ namespace Electrocore.Controllers
                 string fotoNovedadRuta=string.Empty;
                 if(novedadNew.ImageArray!=null){
                     //Local
-                    //fotoNovedadRuta = await postUploadImage(novedadNew.ImageArray);
+                    fotoNovedadRuta = await postUploadImage(novedadNew.ImageArray);
 
                     //S3
-                    var responseUploadNovedadFoto=await UploadFileAwsS3(novedadNew.ImageArray);
-                    if(responseUploadNovedadFoto.IsSuccess){
+                    //var responseUploadNovedadFoto=await UploadFileAwsS3(novedadNew.ImageArray);
+                   /* if(responseUploadNovedadFoto.IsSuccess){
                         fotoNovedadRuta=responseUploadNovedadFoto.Message;
                     }else{
                         response.IsSuccess=false;
                         response.Result=viewModel;
                         response.Message=responseUploadNovedadFoto.Message;
                         return Ok(response);
-                    }
+                    }*/
                 }else{
                     fotoNovedadRuta = "Foto Nula";
                 }
@@ -450,15 +450,16 @@ namespace Electrocore.Controllers
             foreach (var fotoOld in listFotosOld)
             {
                 this._fotoRepository.Delete(fotoOld);
-                if(!fotoOld.Ruta.ToUpper().Contains("Foto Nula".ToUpper())){
+                //REMOTE
+                /*if(!fotoOld.Ruta.ToUpper().Contains("Foto Nula".ToUpper())){
                     string replaceFoto =fotoOld.Ruta.Replace("/Fotos/", "Fotos/");
                     await DeletingAnObject(_bucketName,replaceFoto);
-                }
+                }*/
                 //Local
-                /* 
+                 
                 string foto= _hostingEnvironment.WebRootPath+fotoOld.Ruta;
                 if (System.IO.File.Exists(foto))
-                        System.IO.File.Delete(foto);*/
+                        System.IO.File.Delete(foto);
             }
 
             var fotos=viewModel.Fotos;//AllIncludingAsync(c=>c.Medidor);//GetAllAsync();
@@ -466,9 +467,9 @@ namespace Electrocore.Controllers
                 fotoNew.Elemento_Id= Elemento_Id;
                 if(fotoNew.ImageArray!=null){
                    
-                   // string rutaFoto = await postUploadImage(fotoNew.ImageArray);
-                   // fotoNew.Ruta=rutaFoto;
-                    var responseUploadFoto=await UploadFileAwsS3(fotoNew.ImageArray);
+                    string rutaFoto = await postUploadImage(fotoNew.ImageArray);
+                    fotoNew.Ruta=rutaFoto;
+                   /* var responseUploadFoto=await UploadFileAwsS3(fotoNew.ImageArray);
                     if(responseUploadFoto.IsSuccess){
                         fotoNew.Ruta=responseUploadFoto.Message;
                     }else{
@@ -476,7 +477,7 @@ namespace Electrocore.Controllers
                         response.Result=viewModel;
                         response.Message=responseUploadFoto.Message;
                         return Ok(response);
-                    }
+                    }*/
                 }else{
                     fotoNew.Ruta="Foto nula";
                 }
@@ -596,7 +597,7 @@ namespace Electrocore.Controllers
         } 
         */
 
-
+/* 
         #region METHODS AWS S3
          
         private async Task<ResponseViewModel> UploadFileAwsS3(byte[] imageArray){
@@ -748,6 +749,6 @@ namespace Electrocore.Controllers
 
 
 
-        #endregion 
+        #endregion */
     }
 }

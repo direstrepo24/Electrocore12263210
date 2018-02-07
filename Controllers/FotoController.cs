@@ -27,8 +27,8 @@ namespace electrocore.Controllers
     [Route("api/[controller]")]
     public class FotoController:Controller
     {
-
- private  IAmazonS3 S3Client { get; set; }
+//CONFIG S3
+ //private  IAmazonS3 S3Client { get; set; }
         IHostingEnvironment  _hostingEnvironment;
        // private AmazonS3Client _s3Client = new AmazonS3Client(RegionEndpoint.EUWest2);
        //private AmazonS3Client _s3Client;
@@ -39,10 +39,12 @@ namespace electrocore.Controllers
 
    
         
-        public FotoController(IHostingEnvironment hostingEnvironment,IAmazonS3 s3Client){
+        public FotoController(IHostingEnvironment hostingEnvironment){
+           
+           //,IAmazonS3 s3Client)
             _hostingEnvironment=hostingEnvironment;
-             
-             this.S3Client = s3Client;
+             //CONFIG S3
+           //  this.S3Client = s3Client;
            
             
         }
@@ -100,7 +102,7 @@ namespace electrocore.Controllers
 */
 
 
-        [HttpPost]
+/*        [HttpPost]
         [Route("PostFotoS3")] 
         public async Task<ActionResult> PostFotoS3([FromBody]RequestFotoViewModel foto)
         {
@@ -120,26 +122,11 @@ namespace electrocore.Controllers
             var responseDeleting= await DeletingAnObject(_bucketName,replaceFoto);
 
 
-            return Ok(response);
-
-
-
-            /* 
-               var requestPlain = new PutObjectRequest
-                {
-                    BucketName = "datatakefiles",
-                    Key = "cedula.jpg",
-                  //FilePath = "wwwroot/Fotos/a9a86dc4-8742-46aa-8e28-b42d79153059.jpg",
-                    ContentType = "image/jpg",
-                    //CannedACL = S3CannedACL.PublicRead,//PERMISSION TO FILE PUBLIC ACCESIBLE
-                    InputStream = fotoArrayNew      //SEND THE FILE STREAM,   
-                };
-
-                var cancellationToken = new CancellationToken();
-                var responseUpload = await S3Client.PutObjectAsync(requestPlain, cancellationToken);*/
-           
-          
+            return Ok(response);      
+                       
         }
+     
+
 
 
         private async Task<ResponseViewModel> UploadFileAwsS3(byte[] imageArray){
@@ -361,7 +348,7 @@ namespace electrocore.Controllers
             return newSize;
         }
 
-
+*/
  
 
         [HttpPost]
