@@ -558,7 +558,7 @@ namespace Electrocore.Controllers
                 var streamRemote = new MemoryStream(imageArray);
                 var guid = Guid.NewGuid().ToString();
                 var file = string.Format("{0}.jpg", guid);
-                var folder = "Fotos1/Fotos";
+                var folder = "/Fotos1/Fotos";
                 rutaFoto= string.Format("{0}/{1}",folder,file);
                 string pathExist= _hostingEnvironment.WebRootPath+folder;// _hostingEnvironment.WebRootPath es Igual a "wwwroot"
                 if(!Directory.Exists(pathExist)){
