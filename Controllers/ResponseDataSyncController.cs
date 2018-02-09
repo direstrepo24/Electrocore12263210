@@ -559,7 +559,11 @@ namespace Electrocore.Controllers
                 var guid = Guid.NewGuid().ToString();
                 var file = string.Format("{0}.jpg", guid);
                 var folder = "/Fotos1/Fotos";
-                rutaFoto= string.Format("{0}/{1}",folder,file);
+              
+                //rutaFoto= string.Format("{0}/{1}",folder,file);
+                var folder_fotos = "/Fotos";
+                rutaFoto= string.Format("{0}/{1}",folder_fotos,file);
+
                 string pathExist= _hostingEnvironment.WebRootPath+folder;// _hostingEnvironment.WebRootPath es Igual a "wwwroot"
                 if(!Directory.Exists(pathExist)){
                    Directory.CreateDirectory(pathExist);
