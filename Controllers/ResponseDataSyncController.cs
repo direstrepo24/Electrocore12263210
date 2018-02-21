@@ -19,6 +19,7 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using System.Threading;
 using System.Drawing;
+using Electrocore12263210.ViewModels;
 
 namespace Electrocore.Controllers
 {
@@ -132,17 +133,41 @@ namespace Electrocore.Controllers
 
         #region Methods GET
 
-        /* 
+        
         [HttpGet]
-        [Route("GetCables")] 
-        [SwaggerResponse(200, typeof(MaterialViewModel))]
-        public async Task<ActionResult> GetCables()
+        [Route("getElementoByCiudadAndCodigo/{CodigoApoyo}/{Ciudad_Id}")] 
+        [SwaggerResponse(200, typeof(ResponseViewModel))]
+        public async Task<ActionResult> GetCables(string CodigoApoyo, long Ciudad_Id)
         {
-                //https://stackoverflow.com/questions/40275195/how-to-setup-automapper-in-asp-net-core
+            var response= new ResponseViewModel();
+            //https://stackoverflow.com/questions/40275195/how-to-setup-automapper-in-asp-net-core
            //var cables= await _elementoCableRepository.AllIncludingAsync(a=>a.Elemento_Id==2);//AllIncludingAsync(c=>c.Medidor);//GetAllAsync();
-            var cables= await _elementoCableRepository.AllIncludingAsyncWhere(a=>a.Elemento_Id==2);
-            return Ok(cables);
-        }*/
+            var elemento= await _elementoRepository.AllIncludingAsyncWhereSingle(a=>a.CodigoApoyo.ToUpper().Contains(CodigoApoyo.ToUpper()) && a.Ciudad_Id==Ciudad_Id, b=>b.LocalizacionElementos, c=>c.LocalizacionElementos);
+            if(elemento!=null){
+
+                var ubicacion= await _localizacionElementoRepository.AllIncludingAsyncWhereSingle(a=>a.Element_Id==elemento.Id);
+                var mapper = _mapper.Map<Elemento, ElementoViewModelSearch>(elemento);
+                if(ubicacion!=null){
+                    mapper.Coordenadas=ubicacion.Coordenadas;
+                    mapper.Latitud=ubicacion.Latitud;
+                    mapper.Longitud=ubicacion.Longitud;
+                    mapper.Direccion=ubicacion.Direccion;
+                    mapper.DireccionAproximadaGps=ubicacion.DireccionAproximadaGps;
+                    mapper.Barrio=ubicacion.Barrio;
+                    mapper.Localidad=ubicacion.Localidad;
+                    mapper.ReferenciaLocalizacion=ubicacion.ReferenciaLocalizacion;
+                }
+              
+                response.IsSuccess=true;
+                response.Result=mapper;
+                response.Message="Ok";
+            }else{
+                response.IsSuccess=false;
+                response.Message="No existe";
+            }
+
+            return Ok(response);
+        }
 
 
         [HttpGet]
@@ -590,7 +615,6 @@ namespace Electrocore.Controllers
             return rutaFoto;
         }
         #endregion
-
 
         /*
         [HttpGet]

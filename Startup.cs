@@ -279,6 +279,7 @@ namespace Electrocore
                // c.InjectOnCompleteJavaScript("https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"); // https://cdnjs.com/libraries/crypto-js
                 // c.InjectOnCompleteJavaScript("/swagger-ui/authorization2.js");
             });
+            
             app.UseStaticFiles();
             app.Run(async (context) =>  context.Response.Redirect("/swagger"));
             // app.UseStaticFiles();

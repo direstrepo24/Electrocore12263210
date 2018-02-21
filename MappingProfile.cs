@@ -5,6 +5,7 @@ using electrocore.ViewModels;
 
 //using Electrocore.Models.datatakemodel;
 using Electrocore.ViewModels;
+using Electrocore12263210.ViewModels;
 
 public class MappingProfile : Profile {
     public MappingProfile() {
@@ -120,6 +121,10 @@ public class MappingProfile : Profile {
 
         CreateMap<RequestLoginViewModel, Dispositivo>();
         CreateMap<Dispositivo, RequestLoginViewModel>();
+
+
+        CreateMap<ElementoViewModelSearch, Elemento>();
+        CreateMap<Elemento, ElementoViewModelSearch>();
 
 
        

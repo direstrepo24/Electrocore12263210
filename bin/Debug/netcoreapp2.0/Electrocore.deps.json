@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "47d80779cfd376d92cb086ef1af7ec0219651022"
+    "signature": "03b167c64de96941dc4c6b7fb336d28adea9c3f4"
   },
   "compilationOptions": {
     "defines": [
@@ -26,7 +26,7 @@
           "AWSSDK.Core": "3.3.21.9",
           "AWSSDK.Extensions.NETCore.Setup": "3.3.4",
           "AWSSDK.S3": "3.3.16.2",
-          "AspNet.Security.OAuth.Validation": "2.0.0-rc2-final",
+          "AspNet.Security.OAuth.Validation": "2.0.0-rc3-0298",
           "AutoMapper": "6.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "3.0.1",
           "CsvHelper": "3.0.0-beta8",
@@ -76,7 +76,7 @@
           "Electrocore.dll": {}
         }
       },
-      "AspNet.Security.OAuth.Validation/2.0.0-rc2-final": {
+      "AspNet.Security.OAuth.Validation/2.0.0-rc3-0298": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication": "2.0.0",
           "Newtonsoft.Json": "10.0.3"
@@ -4824,12 +4824,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AspNet.Security.OAuth.Validation/2.0.0-rc2-final": {
+    "AspNet.Security.OAuth.Validation/2.0.0-rc3-0298": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nCP9uoLYqBm39XyOzqK3eYo3o9FXBFKuJo+n0Lc/wWj+sX9EpYgO+OsPbNHusAP+qyzQQHsHs+uYFNBZzgHt3A==",
-      "path": "aspnet.security.oauth.validation/2.0.0-rc2-final",
-      "hashPath": "aspnet.security.oauth.validation.2.0.0-rc2-final.nupkg.sha512"
+      "sha512": "sha512-7VfS/DhKnQoOTh5SmBWvjM1+cnMkf4lipYMj1/IAzWMcPmFJln7m4jHByYh/d+8JRjWYWTg/P93YYgs3nbQX3A==",
+      "path": "aspnet.security.oauth.validation/2.0.0-rc3-0298",
+      "hashPath": "aspnet.security.oauth.validation.2.0.0-rc3-0298.nupkg.sha512"
     },
     "AspNet.Security.OpenIdConnect.Extensions/2.0.0-rc1-final": {
       "type": "package",

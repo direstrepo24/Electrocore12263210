@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "AspNet.Security.OAuth.Validation/2.0.0-rc2-final": {
+      "AspNet.Security.OAuth.Validation/2.0.0-rc3-0298": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication": "2.0.0",
@@ -5637,7 +5637,7 @@
       }
     },
     ".NETCoreApp,Version=v2.0/ubuntu.16.10-x64": {
-      "AspNet.Security.OAuth.Validation/2.0.0-rc2-final": {
+      "AspNet.Security.OAuth.Validation/2.0.0-rc3-0298": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication": "2.0.0",
@@ -11542,12 +11542,12 @@
     }
   },
   "libraries": {
-    "AspNet.Security.OAuth.Validation/2.0.0-rc2-final": {
-      "sha512": "nCP9uoLYqBm39XyOzqK3eYo3o9FXBFKuJo+n0Lc/wWj+sX9EpYgO+OsPbNHusAP+qyzQQHsHs+uYFNBZzgHt3A==",
+    "AspNet.Security.OAuth.Validation/2.0.0-rc3-0298": {
+      "sha512": "7VfS/DhKnQoOTh5SmBWvjM1+cnMkf4lipYMj1/IAzWMcPmFJln7m4jHByYh/d+8JRjWYWTg/P93YYgs3nbQX3A==",
       "type": "package",
-      "path": "aspnet.security.oauth.validation/2.0.0-rc2-final",
+      "path": "aspnet.security.oauth.validation/2.0.0-rc3-0298",
       "files": [
-        "aspnet.security.oauth.validation.2.0.0-rc2-final.nupkg.sha512",
+        "aspnet.security.oauth.validation.2.0.0-rc3-0298.nupkg.sha512",
         "aspnet.security.oauth.validation.nuspec",
         "lib/netstandard2.0/AspNet.Security.OAuth.Validation.dll",
         "lib/netstandard2.0/AspNet.Security.OAuth.Validation.xml"
@@ -21314,18 +21314,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electrocore12263210\\Electrocore.csproj",
+      "projectUniqueName": "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electrocore12263210\\Electrocore.csproj",
       "projectName": "Electrocore",
-      "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electrocore12263210\\Electrocore.csproj",
+      "projectPath": "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electrocore12263210\\Electrocore.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electrocore12263210\\obj\\",
+      "outputPath": "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electrocore12263210\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electrocore12263210\\NuGet.Config",
+        "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electrocore12263210\\NuGet.Config",
         "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
@@ -21342,11 +21342,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj": {
-              "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj"
+            "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj": {
+              "projectPath": "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj"
             },
-            "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj": {
-              "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj"
+            "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj": {
+              "projectPath": "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj"
             }
           }
         }
