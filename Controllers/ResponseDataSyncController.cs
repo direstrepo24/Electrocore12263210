@@ -144,9 +144,10 @@ namespace Electrocore.Controllers
            //var cables= await _elementoCableRepository.AllIncludingAsync(a=>a.Elemento_Id==2);//AllIncludingAsync(c=>c.Medidor);//GetAllAsync();
             var elemento= await _elementoRepository.AllIncludingAsyncWhereSingle(a=>a.CodigoApoyo.ToUpper().Contains(CodigoApoyo.ToUpper()) && a.Ciudad_Id==Ciudad_Id, b=>b.LocalizacionElementos, c=>c.LocalizacionElementos);
             if(elemento!=null){
-
+                
                 var ubicacion= await _localizacionElementoRepository.AllIncludingAsyncWhereSingle(a=>a.Element_Id==elemento.Id);
                 var mapper = _mapper.Map<Elemento, ElementoViewModelSearch>(elemento);
+                mapper.Elemento_Id= elemento.Id;
                 if(ubicacion!=null){
                     mapper.Coordenadas=ubicacion.Coordenadas;
                     mapper.Latitud=ubicacion.Latitud;

@@ -4,7 +4,8 @@ namespace Electrocore12263210.ViewModels
 {
     public class ElementoViewModelSearch
     {
-         public long Id{ get; set; }
+        public long Id{ get; set; }
+          public long Elemento_Id{ get; set; }
         public string CodigoApoyo{ get; set; }
         public long NumeroApoyo{ get; set; }
         public DateTime FechaLevantamiento{ get; set; }
