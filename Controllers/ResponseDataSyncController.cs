@@ -137,7 +137,7 @@ namespace Electrocore.Controllers
         [HttpGet]
         [Route("getElementoByCiudadAndCodigo/{CodigoApoyo}/{Ciudad_Id}")] 
         [SwaggerResponse(200, typeof(ResponseViewModel))]
-        public async Task<ActionResult> GetCables(string CodigoApoyo, long Ciudad_Id)
+        public async Task<ActionResult> getElementoByCiudadAndCodigo(string CodigoApoyo, long Ciudad_Id)
         {
             var response= new ResponseViewModel();
             //https://stackoverflow.com/questions/40275195/how-to-setup-automapper-in-asp-net-core
@@ -163,7 +163,7 @@ namespace Electrocore.Controllers
                 response.Message="Ok";
             }else{
                 response.IsSuccess=false;
-                response.Message="No existe";
+                response.Message=string.Format("El elemento con codigo {0} no existe", CodigoApoyo);
             }
 
             return Ok(response);
